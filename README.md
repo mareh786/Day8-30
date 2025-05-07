@@ -11,9 +11,15 @@
 
 **Project File Structure**
 _├── backend/
+
 │   ├── server.js
+
 │   ├── db.js
+
 │   ├── server.test.js
+
 ├── frontend/
+
 │   └── index.html
+
 ├── package.json_
