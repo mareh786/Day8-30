@@ -17,11 +17,13 @@ jobs:
                     npm install --save-dev jest supertest
                     npm test
         -   name: Run app
-            run: npm start
-        -   name: Check the app
             run: |
-                curl http://localhost:3000
-                APP_PID=$!
-                sleep 10
-                kill $APP_PID
+                    npm start &
+                    echo $! > app.pid
+                    sleep 3
 
+        -   name: Check the app
+            run: curl --fail http://localhost:3000 || exit 1
+        -   name: Close the app
+            run: kill $(cat app.pid)
+                
