@@ -1,0 +1,27 @@
+name: Nodejs Sqlite app
+on: workflow_dispatch
+jobs:
+    buildAndDeployJob:
+        runs-on: ubuntu-latest
+        steps: 
+        -   name: Checkout
+            uses: actions/checkout@v4
+        -   name: Nodejs-Setup
+            uses: actions/setup-node@v4
+            with:
+                node-version: '20.x'
+        -   name: Install Dependencies
+            run: npm install
+        -   name: Test
+            run: |
+                    npm install --save-dev jest supertest
+                    npm test
+        -   name: Run app
+            run: npm start
+        -   name: Check the app
+            run: |
+                curl http://localhost:3000
+                APP_PID=$!
+                sleep 10
+                kill $APP_PID
+
