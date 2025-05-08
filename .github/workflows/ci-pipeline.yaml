@@ -20,7 +20,7 @@ jobs:
             uses: actions/upload-artifact@v4
             with:   
                 name: Unit-Test-Report
-                path: test-results/results.json
+                path: results.xml
                 retention-days: 2
 
         -   name: Run app
