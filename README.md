@@ -1,26 +1,55 @@
-**Application Overveiw**
-- Frontend: HTML + basic fetch (can be served using Express)
-- Backend: Node.js (Express)
-- Database: SQLite (for simplicity and portability)
+# Three-Tier Node.js + SQLite App
 
-**✅ Features:**
-- Takes a name via form input.
-- Sends it to backend.
-- Backend stores it in DB if new, or checks for existing.
-- Returns response message accordingly.
+This is a sample Node.js application built using Express and SQLite that simulates a three-tier architecture. It includes automated testing and CI using GitHub Actions.
 
-**Project File Structure**
+## 🛠️ Tech Stack
 
-_├── backend/
+- Node.js
+- Express
+- SQLite
+- Jest (for unit testing)
+- Supertest (for HTTP testing)
+- GitHub Actions (for CI)
 
-│   ├── server.js
+## 🚀 Project Structure
 
-│   ├── db.js
+├── backend/
+│ └── server.js
+├── test/
+│ └── app.test.js
+├── test-results/
+│ └── results.json (generated)
+├── package.json
+└── .github/
+└── workflows/
+└── nodejs-ci.yml
 
-│   ├── server.test.js
 
-├── frontend/
+## 🔁 CI Workflow Highlights
 
-│   └── index.html
+The GitHub Actions workflow (`nodejs-ci.yml`) includes:
 
-├── package.json_
+1. **Checkout code**
+2. **Set up Node.js (v20)**
+3. **Install dependencies**
+4. **Run tests** using Jest & Supertest
+5. **Generate and upload test report** (`results.json`)
+6. **Start the app**, verify it on `localhost:3000`
+7. **Shut down the app**
+
+### ✅ Trigger
+
+- `workflow_dispatch` (manual trigger from GitHub Actions)
+
+## 🧪 Run Tests Locally
+
+**📦 Run Locally**
+
+npm install
+
+npm start
+
+**🗓️ Part of:**
+This project is part of the #30DaysOfDailyDeployment challenge.
+
+
