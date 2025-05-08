@@ -13,16 +13,26 @@ This is a sample Node.js application built using Express and SQLite that simulat
 
 ## 🚀 Project Structure
 
+
 ├── backend/
+
 │ └── server.js
+
 ├── test/
+
 │ └── app.test.js
+
 ├── test-results/
+
 │ └── results.json (generated)
+
 ├── package.json
+
 └── .github/
-└── workflows/
-└── nodejs-ci.yml
+
+|   └── workflows/
+    
+    |    └── nodejs-ci.yml
 
 
 ## 🔁 CI Workflow Highlights
