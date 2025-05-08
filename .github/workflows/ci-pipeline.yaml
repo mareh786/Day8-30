@@ -12,6 +12,9 @@ jobs:
                 node-version: '20.x'
         -   name: Install Dependencies
             run: npm install
+        -   name: Create test-results directory
+            run: mkdir -p test-results
+    
         -   name: Test
             run: |
                     npm install --save-dev jest supertest
